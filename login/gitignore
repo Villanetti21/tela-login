@@ -1,0 +1,12 @@
+# Node
+node_modules/
+package-lock.json
+
+# VSCode
+.vscode/
+
+# Logs
+*.log
+
+# Build
+dist/

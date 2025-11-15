@@ -1,0 +1,109 @@
+/* Variáveis */
+$primary-gradient: linear-gradient(135deg, #6a11cb, #2575fc);
+$button-gradient: linear-gradient(90deg, #6a11cb, #2575fc);
+$button-hover-gradient: linear-gradient(90deg, #2575fc, #6a11cb);
+
+/* Container centralizado */
+.login-container {
+  display: flex;
+  flex-direction: column; /* empilha título, form e link */
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  background: $primary-gradient;
+  font-family: 'Inter', sans-serif;
+  box-sizing: border-box;
+
+  h2 {
+    color: #fff;
+    font-size: 32px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column; /* empilha inputs e botão */
+    width: 100%;
+    max-width: 400px;
+    gap: 20px; /* espaço entre elementos */
+    background: #fff;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    box-sizing: border-box;
+
+    input {
+      width: 100%;
+      padding: 15px;
+      border-radius: 12px;
+      border: 1px solid #ddd;
+      font-size: 16px;
+      box-sizing: border-box;
+      transition: all 0.3s ease;
+
+      &:focus {
+        outline: none;
+        border-color: #2575fc;
+        box-shadow: 0 0 10px rgba(37,117,252,0.3);
+      }
+    }
+
+    button {
+      width: 100%;
+      padding: 16px;
+      border: none;
+      border-radius: 14px;
+      background: $button-gradient;
+      color: #fff;
+      font-weight: 600;
+      font-size: 17px;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: $button-hover-gradient;
+        transform: translateY(-3px);
+        box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+      }
+
+      &:active {
+        transform: translateY(0);
+        box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+      }
+    }
+  }
+
+  p {
+    margin-top: 20px;
+    color: #fff;
+    font-size: 14px;
+
+    a {
+      color: #2575fc;
+      font-weight: 600;
+      text-decoration: none;
+
+      &:hover {
+        color: #6a11cb;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+  .login-container {
+    h2 { font-size: 28px; }
+
+    form {
+      padding: 30px 20px;
+      gap: 15px;
+
+      input, button { font-size: 15px; padding: 12px; }
+    }
+  }
+}
